@@ -3,11 +3,12 @@ package service
 import (
 	"common/proto/proto"
 	"context"
-	"github.com/topfreegames/pitaya/v2"
-	"github.com/topfreegames/pitaya/v2/component"
 	"lobbyServer/helper"
 	"lobbyServer/model/accountModel"
 	"regexp"
+
+	"github.com/topfreegames/pitaya/v2"
+	"github.com/topfreegames/pitaya/v2/component"
 )
 
 type AccountService struct {
@@ -30,7 +31,7 @@ func checkNameValid(name string) bool {
 
 func (s *AccountService) Register(ctx context.Context, req *proto.RegisterRequest) (*proto.CommonResponse, error) {
 	logger := pitaya.GetDefaultLoggerFromCtx(ctx)
-
+	logger.Infof("register...%v", req)
 	// check params
 	if req.Account == "" || req.Password == "" {
 		logger.Error("Account or password is empty!")

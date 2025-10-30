@@ -4,9 +4,10 @@ import (
 	"common/modules/db"
 	"common/modules/db/mongodb"
 	"context"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/bson"
-	"testing"
 )
 
 type Account struct {
@@ -33,9 +34,9 @@ func TestRegister(t *testing.T) {
 	config := &mongodb.MongoConfig{
 		Config: db.Config{
 			Host:     "localhost",
-			Port:     27017,
-			Username: "debugeve",
-			Password: "develop2023",
+			Port:     20777,
+			Username: "",
+			Password: "",
 		},
 	}
 	s := mongodb.NewMongoStorage(*config)

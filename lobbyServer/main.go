@@ -4,12 +4,13 @@ import (
 	"common/constants"
 	"common/modules/db"
 	"common/modules/db/mongodb"
+	"lobbyServer/service"
+	"strings"
+
 	"github.com/sirupsen/logrus"
 	"github.com/topfreegames/pitaya/v2"
 	"github.com/topfreegames/pitaya/v2/component"
 	"github.com/topfreegames/pitaya/v2/config"
-	"lobbyServer/service"
-	"strings"
 )
 
 var app pitaya.Pitaya
@@ -48,9 +49,9 @@ func registerModules() {
 	mongo := mongodb.NewMongoStorage(mongodb.MongoConfig{
 		Config: db.Config{
 			Host:     "localhost",
-			Port:     27017,
-			Username: "debugeve",
-			Password: "develop2023",
+			Port:     20777,
+			Username: "",
+			Password: "",
 		},
 		MaxPoolSize: 10,
 	})

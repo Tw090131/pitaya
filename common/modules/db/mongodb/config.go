@@ -18,7 +18,7 @@ func NewDefaultMongoConfig() *MongoConfig {
 	return &MongoConfig{
 		Config: db.Config{
 			Host: "localhost",
-			Port: 27017,
+			Port: 20777,
 		},
 		MaxPoolSize: 10,
 	}

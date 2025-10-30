@@ -4,10 +4,11 @@ import (
 	"common/constants"
 	"common/proto/proto"
 	"context"
-	"github.com/topfreegames/pitaya/v2"
-	"github.com/topfreegames/pitaya/v2/component"
 	"proxyServer/model/loginModel"
 	"proxyServer/router"
+
+	"github.com/topfreegames/pitaya/v2"
+	"github.com/topfreegames/pitaya/v2/component"
 )
 
 // AccountService 账号服务

@@ -5,13 +5,14 @@ import (
 	"common/modules/db"
 	"common/modules/db/mongodb"
 	"fmt"
+	"lobbyServer/model/accountModel"
+	"testing"
+	"time"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/topfreegames/pitaya/v2"
 	"github.com/topfreegames/pitaya/v2/config"
 	"github.com/topfreegames/pitaya/v2/helpers"
-	"lobbyServer/model/accountModel"
-	"testing"
-	"time"
 )
 
 func mockApp() *pitaya.App {
@@ -28,7 +29,7 @@ func TestAccountModel(t *testing.T) {
 	mongo := mongodb.NewMongoStorage(mongodb.MongoConfig{
 		Config: db.Config{
 			Host:     "localhost",
-			Port:     27017,
+			Port:     20777,
 			Username: "debugeve",
 			Password: "develop2023",
 		},

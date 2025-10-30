@@ -3,6 +3,7 @@ package mongodb
 import (
 	"context"
 	"errors"
+
 	"github.com/topfreegames/pitaya/v2/modules"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -59,6 +60,7 @@ func (m *MongoStorage) GetCollection(dbName, collection string) *mongo.Collectio
 	return m.Database(dbName).Collection(collection)
 }
 
+// 具体方法参考https://docs.mongodb.com/drivers/go/
 func (m *MongoStorage) InsertOne(c Collection) error {
 	_, err := m.GetCollection(c.GetDBName(), c.GetCollectionName()).InsertOne(context.TODO(), c)
 	if err != nil {
