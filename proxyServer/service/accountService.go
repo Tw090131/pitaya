@@ -40,7 +40,6 @@ func (s *AccountService) Register(ctx context.Context, req *proto.RegisterReques
 
 	_ = session.Set(constants.SessionLobbyIdKey, lobby.ID)
 
-	rsp.Err = proto.ErrCode_OK
 	return rsp, nil
 }
 

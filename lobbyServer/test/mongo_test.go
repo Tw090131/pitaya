@@ -22,6 +22,7 @@ func mockApp() *pitaya.App {
 	return app
 }
 
+// 测试函数必须以Test开头
 func TestAccountModel(t *testing.T) {
 	app := mockApp()
 	pitaya.DefaultApp = app
@@ -30,8 +31,8 @@ func TestAccountModel(t *testing.T) {
 		Config: db.Config{
 			Host:     "localhost",
 			Port:     20777,
-			Username: "debugeve",
-			Password: "develop2023",
+			Username: "",
+			Password: "",
 		},
 		MaxPoolSize: 10,
 	})
